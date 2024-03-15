@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             private void startTime() {
                 timer = new CountDownTimer(10000,1000) {
                     @Override
-                    public void onTick(long l) {
+                    public void onTick(long millisUntilFinished) {
                         long hours = (millisUntilFinished / 1000) / 3600;
                         long minutes = ((millisUntilFinished / 1000) % 3600) / 60;
                         long seconds = (millisUntilFinished / 1000) % 60;
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                         MediaPlayer alarm = MediaPlayer.create(MainActivity.this, R.raw.alarmClock);
                         alarm.start();
                     }
-                }.alarm.start();
+                }.start();
             }
         });
     }
